@@ -8,15 +8,15 @@ import { Euro, TrendingUp, Receipt, Wallet } from 'lucide-react';
 
 export default function DashboardPage() {
   return (
-    <div className="p-8">
+    <div className="p-4 md:p-8">
       {/* Header */}
-      <div className="mb-8">
-        <h1 className="text-2xl font-bold text-slate-800">Goedemiddag, Jan 👋</h1>
+      <div className="mb-6 md:mb-8">
+        <h1 className="text-xl md:text-2xl font-bold text-slate-800">Goedemiddag, Jan 👋</h1>
         <p className="text-slate-500 mt-1 text-sm">Hier is jouw financieel overzicht van vandaag, 5 juni 2024</p>
       </div>
 
       {/* Key metrics */}
-      <div className="grid grid-cols-4 gap-4 mb-6">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-5 md:mb-6">
         <MetricCard
           titel="Omzet deze maand"
           waarde="€9.500"
@@ -51,8 +51,8 @@ export default function DashboardPage() {
       </div>
 
       {/* Cashflow chart + Uitkering */}
-      <div className="grid grid-cols-3 gap-6 mb-6">
-        <div className="col-span-2">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 md:gap-6 mb-5 md:mb-6">
+        <div className="lg:col-span-2">
           <CashflowChart />
         </div>
         <div>
@@ -60,17 +60,11 @@ export default function DashboardPage() {
         </div>
       </div>
 
-      {/* Facturen + Reserveringen + AI */}
-      <div className="grid grid-cols-3 gap-6">
-        <div className="col-span-1">
-          <ReserveringCard />
-        </div>
-        <div className="col-span-1">
-          <FacturenRisico />
-        </div>
-        <div className="col-span-1">
-          <AIInsightsCard />
-        </div>
+      {/* Reserveringen + Facturen + AI */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+        <ReserveringCard />
+        <FacturenRisico />
+        <AIInsightsCard />
       </div>
     </div>
   );

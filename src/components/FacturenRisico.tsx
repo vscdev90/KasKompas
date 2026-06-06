@@ -48,15 +48,15 @@ export default function FacturenRisico() {
                 <p className="text-slate-700 text-sm font-medium truncate">{f.klant}</p>
                 <RisicoLabel score={f.risicoScore} />
               </div>
-              <div className="flex items-center gap-3 text-xs text-slate-400">
+              <div className="flex flex-wrap items-center gap-x-3 gap-y-0.5 text-xs text-slate-400">
                 <span>{f.id}</span>
-                <span>Vervalt {f.vervaldatum}</span>
-                <span>Gem. DPO: {f.dpo} dgn</span>
+                <span className="hidden sm:inline">Vervalt {f.vervaldatum}</span>
+                <span className="hidden sm:inline">DPO: {f.dpo} dgn</span>
               </div>
             </div>
-            <div className="text-right ml-4 shrink-0">
+            <div className="text-right ml-3 shrink-0">
               <p className="text-slate-800 font-semibold text-sm">€{f.bedrag.toLocaleString('nl-NL')}</p>
-              <div className="mt-1 w-24 h-1.5 bg-slate-100 rounded-full overflow-hidden">
+              <div className="mt-1 w-16 sm:w-24 h-1.5 bg-slate-100 rounded-full overflow-hidden">
                 <div
                   className={`h-full rounded-full ${
                     f.risicoScore >= 70 ? 'bg-red-400' : f.risicoScore >= 40 ? 'bg-amber-400' : 'bg-emerald-400'

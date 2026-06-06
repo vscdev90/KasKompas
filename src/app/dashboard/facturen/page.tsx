@@ -7,13 +7,13 @@ export default function FacturenPage() {
   const totaalRisico = hoogRisico.reduce((s, f) => s + f.bedrag, 0);
 
   return (
-    <div className="p-8">
-      <div className="mb-8">
-        <h1 className="text-2xl font-bold text-slate-800">Facturen</h1>
+    <div className="p-4 md:p-8">
+      <div className="mb-6 md:mb-8">
+        <h1 className="text-xl md:text-2xl font-bold text-slate-800">Facturen</h1>
         <p className="text-slate-500 text-sm mt-1">Openstaande facturen met betalingsrisico-analyse</p>
       </div>
 
-      <div className="grid grid-cols-3 gap-4 mb-6">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4 mb-5 md:mb-6">
         {[
           { label: 'Totaal uitstaand', value: `€${totaalOpen.toLocaleString('nl-NL')}`, sub: `${facturen.length} facturen` },
           { label: 'Hoog risico', value: `€${totaalRisico.toLocaleString('nl-NL')}`, sub: `${hoogRisico.length} facturen` },

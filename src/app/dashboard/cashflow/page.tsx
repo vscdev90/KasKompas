@@ -25,13 +25,13 @@ export default function CashflowPage() {
   const gemOmzet = Math.round(totaalOmzet / actueel.length);
 
   return (
-    <div className="p-8">
-      <div className="mb-8">
-        <h1 className="text-2xl font-bold text-slate-800">Cashflow</h1>
+    <div className="p-4 md:p-8">
+      <div className="mb-6 md:mb-8">
+        <h1 className="text-xl md:text-2xl font-bold text-slate-800">Cashflow</h1>
         <p className="text-slate-500 text-sm mt-1">Inkomsten, kosten en voorspellingen per maand</p>
       </div>
 
-      <div className="grid grid-cols-3 gap-4 mb-6">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4 mb-5 md:mb-6">
         {[
           { label: 'YTD omzet', value: formatEuro(totaalOmzet), sub: '6 maanden' },
           { label: 'YTD netto', value: formatEuro(totaalNetto), sub: 'Na kosten' },
